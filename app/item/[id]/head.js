@@ -5,23 +5,22 @@ async function getCategory() {
 
 export default async function Head({params: {id}}) {
   const Category = await getCategory()
-  const data = Category.categories.find((item) => item.strCategory === id)
   return (
     <>
-      <title>{data.strCategory}</title>
-<meta name="title" content={data.strCategory} />
-<meta name="description" content={data.strCategoryDescription.slice(0,50)+'...'} />
+      <title>{Category.categories.find((item) => item.strCategory == id).strCategory}</title>
+<meta name="title" content={Category.categories.find((item) => item.strCategory == id).strCategory} />
+<meta name="description" content={Category.categories.find((item) => item.strCategory == id).strCategoryDescription.slice(0,50)+'...'} />
 <meta property="og:type" content="website" />
-<meta property="og:url" content={`https://next-js-13-seo.vercel.app/item/`+data.strCategory} />
-<meta property="og:title" content={data.strCategory} />
-<meta property="og:description" content={data.strCategoryDescription.slice(0,50)+'...'}  />
-<meta property="og:image" content={data.strCategoryThumb}  />
+<meta property="og:url" content={`https://next-js-13-seo.vercel.app/item/`+Category.categories.find((item) => item.strCategory == id).strCategory} />
+<meta property="og:title" content={Category.categories.find((item) => item.strCategory == id).strCategory} />
+<meta property="og:description" content={Category.categories.find((item) => item.strCategory == id).strCategoryDescription.slice(0,50)+'...'}  />
+<meta property="og:image" content={Category.categories.find((item) => item.strCategory == id).strCategoryThumb}  />
 
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={`https://next-js-13-seo.vercel.app/item/`+data.strCategory}  />
-<meta property="twitter:title" content={data.strCategory} />
-<meta property="twitter:description" content={data.strCategoryDescription.slice(0,50)+'...'} />
-<meta property="twitter:image" content={data.strCategoryThumb} />
+<meta property="twitter:url" content={`https://next-js-13-seo.vercel.app/item/`+Category.categories.find((item) => item.strCategory == id).strCategory}  />
+<meta property="twitter:title" content={Category.categories.find((item) => item.strCategory == id).strCategory} />
+<meta property="twitter:description" content={Category.categories.find((item) => item.strCategory == id).strCategoryDescription.slice(0,50)+'...'} />
+<meta property="twitter:image" content={Category.categories.find((item) => item.strCategory == id).strCategoryThumb} />
     </>
   )
 }
