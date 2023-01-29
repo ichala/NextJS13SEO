@@ -1,5 +1,5 @@
 async function getCategory() {
-  const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
+  const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php',  { cache: 'no-store' });
    return res.json()
 }
 

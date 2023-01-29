@@ -2,7 +2,7 @@ import Image from "next/image";
 
 async function getData(id) {
     const res = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${id}`
+      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${id}`, { cache: 'no-store' }
     );
     return res.json();
   }
