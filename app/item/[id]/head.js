@@ -2,7 +2,6 @@ async function getCategory(id) {
   const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php',  { cache: 'no-store' });
   let result = await res.json();
   let data = result.categories.find((item) => item.strCategory == id);
-  console.log(data)
   return data
 }
 

@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body data-theme="night">{children}</body>
+      <body data-theme="night" className='min-h-screen'>{children}</body>
     </html>
   )
 }
