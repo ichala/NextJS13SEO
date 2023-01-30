@@ -11,7 +11,7 @@ async function getData() {
 export default async function Home() {
   const data = await getData();
   return (
-    <div className="text-4xl flex justify-center items-center flex-wrap gap-2 text-red-800">
+    <div className="text-4xl flex justify-center items-center flex-wrap gap-2 text-primary">
       {data.categories.map((item) => (
 
 <div  key={item.idCategory}  className="card max-w-sm bg-base-100 shadow-xl">

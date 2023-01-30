@@ -13,7 +13,7 @@ const page = async ({
     const data = await getData(params.id);
   return (
     <>
-    <div className="text-4xl flex justify-center items-center flex-wrap gap-2 text-red-800">
+    <div className="text-4xl flex justify-center items-center flex-wrap gap-2 text-primary">
     {data.meals.map((item) => (
 
 <div key={item.idMeal}  className="card max-w-sm bg-base-100 shadow-xl">
